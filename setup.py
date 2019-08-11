@@ -15,7 +15,7 @@ setup(
 	author_email='dull.bananas0@gmail.com',
 	url='https://github.com/dullbananas/phosphorus',
 	license='MIT',
-	packages='phosphorus',
+	packages=['phosphorus'],
 	classifiers=[
 		'Development Status :: 3 - Alpha',
 		'Environment :: Web Environment',
