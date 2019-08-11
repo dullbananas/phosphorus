@@ -1,7 +1,4 @@
 NOT_FOUND = '''
-<!--
-{environ}
--->
 <html>
 <head>
 <title>404 Not Found</title>
