@@ -3,13 +3,13 @@ import re
 
 
 class Endpoint:
-	def __init__(self, pattern, func):
-		self.pattern = re.compile(pattern)
+	def __init__(self, pattern, func, flags=0):
+		self.pattern = re.compile(pattern, flags)
 		self.func = func
 
 
 	def match(self, url):
-		return self.pattern.match(url)
+		return self.pattern.fullmatch(url)
 
 
 	def call(self, **kwargs):
@@ -22,9 +22,10 @@ class App:
 		self.endpoints = []
 
 
-	def add_endpoint(self, pattern):
+	def add_endpoint(self, pattern, re_whitespace=False):
+		flags = re.VERBOSE if re_whitespace else 0
 		def decor(f):
-			self.endpoints.append(Endpoint(pattern, f))
+			self.endpoints.append(Endpoint(pattern, f, flags))
 			return f
 		return decor
 
