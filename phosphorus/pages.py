@@ -1,4 +1,4 @@
-NOT_FOUND = '''
+NOT_FOUND = b'''
 <html>
 <head>
 <title>404 Not Found</title>

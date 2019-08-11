@@ -41,7 +41,7 @@ class App:
 		# 404 error if no endpoint matches
 		if not match:
 			start_response('404 Not Found', [('Content-Type', 'text/html')])
-			return [bytes(pages.NOT_FOUND, 'utf-8')]
+			return [pages.NOT_FOUND]
 
 		# Call function
 		response = endpoint.call(
