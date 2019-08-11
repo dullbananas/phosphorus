@@ -50,11 +50,9 @@ class App:
 
 		# Process response and produce actual response
 		start_response(response.status, [i for i in response.headers.items()])
-		print([i for i in response.headers.items()])
 		return [bytes(response.content, 'utf-8')]
 
 
 	def __call__(self, environ, start_response):
 		result = self.wsgi_app(environ, start_response)
-		print(result)
 		return result
